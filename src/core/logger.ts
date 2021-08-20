@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-export const log = <T>(...args: T[]): void => {
+export const log = (...args: unknown[]): void => {
 	const date = new Date();
 	const minutes = date.getMinutes();
 	const seconds = date.getSeconds();
@@ -12,7 +12,7 @@ export const log = <T>(...args: T[]): void => {
 	);
 };
 
-export const error = <T>(...args: T[]): void => {
+export const error = (...args: unknown[]): void => {
 	const date = new Date();
 	const minutes = date.getMinutes();
 	const seconds = date.getSeconds();
