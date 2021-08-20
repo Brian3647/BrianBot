@@ -1,7 +1,6 @@
-import { ILogger } from './types';
 import chalk from 'chalk';
 
-export const log: ILogger = (...args: unknown[]): void => {
+export const log = <T>(...args: T[]): void => {
 	const date = new Date();
 	const minutes = date.getMinutes();
 	const seconds = date.getSeconds();
@@ -13,7 +12,7 @@ export const log: ILogger = (...args: unknown[]): void => {
 	);
 };
 
-export const error: ILogger = (...args: unknown[]): void => {
+export const error = <T>(...args: T[]): void => {
 	const date = new Date();
 	const minutes = date.getMinutes();
 	const seconds = date.getSeconds();
