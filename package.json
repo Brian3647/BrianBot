@@ -1,0 +1,44 @@
+{
+	"name": "brian3647bot",
+	"version": "0.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"private": true,
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint .",
+		"fmt": "prettier --write .",
+		"start": "node .",
+		"dev": "ts-node src/index.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Brian3647/personal-discord-bot.git"
+	},
+	"keywords": [
+		"bot",
+		"discord"
+	],
+	"author": "Brian3647",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/Brian3647/personal-discord-bot/issues"
+	},
+	"homepage": "https://github.com/Brian3647/personal-discord-bot#readme",
+	"devDependencies": {
+		"@types/node": "^16.3.1",
+		"@types/ws": "^7.4.6",
+		"@typescript-eslint/eslint-plugin": "^4.27.0",
+		"@typescript-eslint/parser": "^4.27.0",
+		"eslint": "^7.30.0",
+		"prettier": "^2.3.2",
+		"ts-node": "^10.1.0",
+		"typescript": "^4.3.5",
+		"yarn": "^1.22.10"
+	},
+	"dependencies": {
+		"chalk": "^4.1.1",
+		"discord.js": "^13.0.0-dev.d433fe8.1626004976",
+		"dotenv": "^10.0.0"
+	}
+}
