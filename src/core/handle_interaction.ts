@@ -29,6 +29,17 @@ export default async (
 	}
 
 	client.on('messageCreate', async (message) => {
+		if (
+			message.content
+				.toLowerCase()
+				.replace('//', 'w')
+				.replace(/[aeiouAEIOU][rwRW][aeiouAEIOU]/, 'uwu')
+				.includes('uwu')
+		) {
+			log('"UwU" detectado por ' + message.author.tag);
+			message.reply('Joto de mierda');
+		}
+
 		const args = message.content.split(/\s+/);
 		const command = args[0].slice(config.prefix.length);
 		args.shift();

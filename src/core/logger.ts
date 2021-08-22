@@ -1,25 +1,22 @@
 import chalk from 'chalk';
 
-export const log = (...args: unknown[]): void => {
-	const date = new Date();
-	const minutes = date.getMinutes();
-	const seconds = date.getSeconds();
-	const hours = date.getHours();
+export const fmt_number = (length: number, rnum: number): string => {
+	return '0'.repeat(length - rnum.toString().length) + rnum.toString();
+};
 
-	console.log(
-		`[${chalk.blueBright('LOG')}] [${hours}:${minutes}:${seconds}]`,
-		...args
-	);
+export const date_fmt = (): string => {
+	const date = new Date();
+	const minutes = fmt_number(2, date.getMinutes());
+	const seconds = fmt_number(2, date.getSeconds());
+	const hours = fmt_number(2, date.getHours());
+
+	return `[${hours}:${minutes}:${seconds}]`;
+};
+
+export const log = (...args: unknown[]): void => {
+	console.log(`${date_fmt()} ${chalk.blueBright('log')}`, ...args);
 };
 
 export const error = (...args: unknown[]): void => {
-	const date = new Date();
-	const minutes = date.getMinutes();
-	const seconds = date.getSeconds();
-	const hours = date.getHours();
-
-	console.log(
-		`[${chalk.redBright('ERROR')}] [${hours}:${minutes}:${seconds}]`,
-		...args
-	);
+	console.error(`${date_fmt()} ${chalk.redBright('error')}`, ...args);
 };
